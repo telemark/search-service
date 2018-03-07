@@ -6,6 +6,10 @@
 
 Search/indexing frontend for out ElasticSearch
 
+## API
+
+
+
 ## Licence
 
 [MIT](LICENSE)
