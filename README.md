@@ -8,7 +8,33 @@ Search/indexing frontend for out ElasticSearch
 
 ## API
 
+GETs and POSTs are open.
 
+PUTs and DELETEs requires a valid jwt
+
+### GET /
+
+Returns this page
+
+### PUT /api/documents
+
+Adds a new document to the index
+
+### GET /api/search
+
+Search indexed documents
+
+### POST /api/search
+
+Search indexed documents
+
+### DELETE /api/:index
+
+Deletes a given index
+
+### GET /api/ping
+
+Ping for pong
 
 ## Licence
 
