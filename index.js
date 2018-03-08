@@ -25,7 +25,7 @@ router.get('/', views.getFrontpage)
 router.put('/api/documents', api.addDocument)
 router.get('/api/search', api.doSearch)
 router.post('/api/search', api.doSearch)
-router.delete('/api/:index', api.deleteIndex)
+router.delete('/api/indexes/:index', api.deleteIndex)
 router.get('/api/ping', api.ping)
 
 module.exports = (request, response) => {

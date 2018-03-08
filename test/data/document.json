@@ -1,0 +1,9 @@
+{
+  "index": "test",
+  "type": "document",
+  "id": "1",
+  "body": {
+    "title": "I feel wunderbar",
+    "description": "A short story about my feelings"
+  }
+}
