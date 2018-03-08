@@ -21,7 +21,7 @@
     "standard-fix": "standard --fix",
     "start": "micro",
     "dev": "micro-dev",
-    "deploy": "npm test && now && now alias",
+    "deploy": "now && now alias",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
@@ -41,7 +41,7 @@
   "homepage": "https://github.com/telemark/search-service#readme",
   "now": {
     "alias": [
-      "search.service.t-fk.no"
+      "search.micro.t-fk.no"
     ],
     "type": "npm",
     "dotenv": "production.env",
