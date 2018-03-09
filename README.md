@@ -18,7 +18,9 @@ Returns this page
 
 ### PUT /api/documents
 
-Adds a new document to the index
+Adds a new document to index.
+
+You'll need do supply index, type, id and the document itself in the body property. See the [example](test/data/document.json)
 
 http PUT http://localhost:3000/api/documents Authorization:'Bearer <jwt-token>' < test/data/document.json
 
