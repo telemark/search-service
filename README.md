@@ -119,7 +119,7 @@ $ http POST http://localhost:3000/api/search q=wunderbar
 }
 ```
 
-### DELETE /api/:index
+### DELETE /api/indexes/:index
 
 Deletes a given index
 
