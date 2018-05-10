@@ -1,7 +1,7 @@
 {
   "name": "search-service",
   "description": "Search/indexing frontend for out ElasticSearch",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "private": true,
   "author": {
