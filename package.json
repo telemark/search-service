@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "cors": "2.8.4",
-    "elasticsearch": "14.2.2",
+    "elasticsearch": "15.0.0",
     "express-jwt": "5.3.1",
     "finalhandler": "1.1.1",
     "markdown-it": "8.4.1",
