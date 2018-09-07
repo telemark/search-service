@@ -1,0 +1,11 @@
+{
+  "name": "search-service",
+  "alias": [
+    "search.service.t-fk.no"
+  ],
+  "type": "docker",
+  "dotenv": "production.env",
+  "features": {
+    "cloud": "v2"
+  }
+}
