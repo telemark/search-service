@@ -17,7 +17,7 @@ const router = Router()
 router.use(cors())
 
 // JWT
-router.use(jwt({secret: config.JWT_SECRET}).unless({path: ['/', '/api/search', '/api/ping']}))
+router.use(jwt({ secret: config.JWT_SECRET }).unless({ path: ['/', '/api/search', '/api/ping'] }))
 router.use(handleUnauthorized)
 
 // ROUTES
