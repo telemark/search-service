@@ -151,5 +151,3 @@ pong
 ## Licence
 
 [MIT](LICENSE)
-
-![Robohash image of search-service](https://robots.kebabstudios.party/search-service.png "Robohash image of search-service")
