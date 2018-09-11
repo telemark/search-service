@@ -8,6 +8,8 @@ const client = new elasticsearch.Client({
 })
 const logger = require('./logger')
 
+const approvedSearchKeys = ['q', 'df', 'analyzer', 'analyze_wildcard', 'batched_reduce_size', 'default_operator', 'lenient', 'explain', '_source', 'stored_fields', 'sort', 'track_scores', 'track_total_hits', 'timeout', 'terminate_after', 'from', 'size', 'search_type', 'allow_partial_search_results']
+
 exports.addDocument = async (request, response) => {
   logger('info', ['api', 'addDocument'])
   try {
@@ -48,9 +50,13 @@ exports.doSearch = async (request, response) => {
   // Handle q and query as querystring
   if (data['query'] && !data['q']) {
     data.q = data.query
-    delete data['query']
   }
-  console.log(data)
+  // Removes illegal keys
+  Object.keys(data).forEach(key => {
+    if (!approvedSearchKeys.includes(key)) {
+      delete data[key]
+    }
+  })
   try {
     const result = await client.search(data)
     send(response, 200, result)
