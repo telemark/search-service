@@ -45,6 +45,12 @@ exports.doSearch = async (request, response) => {
   logger('info', ['api', 'doSearch'])
   const { query } = await parse(request.url, true)
   const data = request.method === 'POST' ? await json(request) : query
+  // Handle q and query as querystring
+  if (data['query'] && !data['q']) {
+    data.q = data.query
+    delete data['query']
+  }
+  console.log(data)
   try {
     const result = await client.search(data)
     send(response, 200, result)
