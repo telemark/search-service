@@ -44,7 +44,6 @@ exports.deleteIndex = (request, response) => {
 }
 
 exports.doSearch = async (request, response) => {
-  logger('info', ['api', 'doSearch'])
   const { index } = request.params
   const { query } = await parse(request.url, true)
   const data = request.method === 'POST' ? await json(request) : query
@@ -62,8 +61,10 @@ exports.doSearch = async (request, response) => {
     console.log(index)
     data.index = index
   }
+  logger('info', ['api', 'doSearch', 'query', data.q, 'index', `${data.index || 'all'}`, 'start'])
   try {
     const result = await client.search(data)
+    logger('info', ['api', 'doSearch', 'query', data.q, 'index', `${data.index || 'all'}`, 'hits', result.hits.total, 'finished'])
     send(response, 200, result)
   } catch (error) {
     logger('error', ['api', 'doSearch', error])
