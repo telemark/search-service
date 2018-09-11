@@ -17,14 +17,16 @@ const router = Router()
 router.use(cors())
 
 // JWT
-router.use(jwt({ secret: config.JWT_SECRET }).unless({ path: ['/', '/api/search', '/api/ping'] }))
+router.use(jwt({ secret: config.JWT_SECRET }).unless({ path: ['/', /\/search/i, '/api/ping'] }))
 router.use(handleUnauthorized)
 
 // ROUTES
 router.get('/', views.getFrontpage)
 router.put('/api/documents', api.addDocument)
 router.get('/api/search', api.doSearch)
+router.get('/api/:index/search', api.doSearch)
 router.post('/api/search', api.doSearch)
+router.post('/api/:index/search', api.doSearch)
 router.delete('/api/indexes/:index', api.deleteIndex)
 router.get('/api/ping', api.ping)
 

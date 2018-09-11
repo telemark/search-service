@@ -45,6 +45,7 @@ exports.deleteIndex = (request, response) => {
 
 exports.doSearch = async (request, response) => {
   logger('info', ['api', 'doSearch'])
+  const { index } = request.params
   const { query } = await parse(request.url, true)
   const data = request.method === 'POST' ? await json(request) : query
   // Handle q and query as querystring
@@ -57,6 +58,10 @@ exports.doSearch = async (request, response) => {
       delete data[key]
     }
   })
+  if (index) {
+    console.log(index)
+    data.index = index
+  }
   try {
     const result = await client.search(data)
     send(response, 200, result)

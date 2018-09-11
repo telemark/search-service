@@ -81,6 +81,47 @@ returns
 }
 ```
 
+### GET /api/:index/search
+
+Search indexed documents with a regular GET request.
+
+Filters by `:index`
+
+```sh
+$ http GET http://localhost:3000/api/test/search?q=wunderbar
+```
+
+returns
+
+```JavaScript
+{
+    "_shards": {
+        "failed": 0,
+        "skipped": 0,
+        "successful": 6,
+        "total": 6
+    },
+    "hits": {
+        "hits": [
+            {
+                "_id": "1",
+                "_index": "test",
+                "_score": 0.2876821,
+                "_source": {
+                    "description": "A short story about my feelings",
+                    "title": "I feel wunderbar"
+                },
+                "_type": "document"
+            }
+        ],
+        "max_score": 0.2876821,
+        "total": 1
+    },
+    "timed_out": false,
+    "took": 59
+}
+```
+
 ### POST /api/search
 
 Search indexed documents by POSTing a json request
@@ -117,6 +158,46 @@ $ http POST http://localhost:3000/api/search q=wunderbar
     "took": 59
 }
 ```
+
+### POST /api/:index/search
+
+Search indexed documents by POSTing a json request.
+
+Filters by `:index`
+
+```sh
+$ http POST http://localhost:3000/api/test/search q=wunderbar
+```
+
+```JavaScript
+{
+    "_shards": {
+        "failed": 0,
+        "skipped": 0,
+        "successful": 6,
+        "total": 6
+    },
+    "hits": {
+        "hits": [
+            {
+                "_id": "1",
+                "_index": "test",
+                "_score": 0.2876821,
+                "_source": {
+                    "description": "A short story about my feelings",
+                    "title": "I feel wunderbar"
+                },
+                "_type": "document"
+            }
+        ],
+        "max_score": 0.2876821,
+        "total": 1
+    },
+    "timed_out": false,
+    "took": 59
+}
+```
+
 
 ### DELETE /api/indexes/:index
 
