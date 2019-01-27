@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/telemark/search-service#readme",
   "devDependencies": {
-    "ava": "1.1.0",
+    "ava": "1.2.0",
     "axios": "0.18.0",
     "coveralls": "3.0.2",
     "micro-dev": "3.0.0",
